@@ -115,8 +115,8 @@
                                         <th>Quantity</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
+                                <tbody class="items">
+                                    <tr class="item">
                                         <td class="cart_product_img">
                                             <a href="#"><img src="img/bg-img/cart1.jpg" alt="Product"></a>
                                         </td>
@@ -124,20 +124,22 @@
                                             <h5>Mixed Roses</h5>
                                         </td>
                                         <td class="price">
-                                            <span>$130</span>
+                                            <span class="cart-price"> $130</span>
                                         </td>
                                         <td class="qty">
                                             <div class="qty-btn d-flex">
                                                 <p>Qty</p>
                                                 <div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                    <input type="number" class="qty-text" name="quantity" value="1">
                                                 </div>
                                             </div>
+                                            
+                                            <div><button class="btn btn-danger" type="button">Remove</button></div>
+                                            
                                         </td>
+                                        
                                     </tr>
-                                    <tr>
+                                    <tr class="item">
                                         <td class="cart_product_img">
                                             <a href="#"><img src="img/bg-img/cart2.jpg" alt="Product"></a>
                                         </td>
@@ -145,20 +147,19 @@
                                             <h5>Pink flowers</h5>
                                         </td>
                                         <td class="price">
-                                            <span>$10</span>
+                                            <span class="cart-price">$10</span>
                                         </td>
                                         <td class="qty">
                                             <div class="qty-btn d-flex">
                                                 <p>Qty</p>
                                                 <div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty2" step="1" min="1" max="300" name="quantity" value="1">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty2'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                    <input type="number" class="qty-text" name="quantity" value="1">
                                                 </div>
                                             </div>
+                                            <div><button  class="btn btn-danger" type="button">Remove</button></div>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="item">
                                         <td class="cart_product_img">
                                             <a href="#"><img src="img/bg-img/cart3.jpg" alt="Product"></a>
                                         </td>
@@ -166,17 +167,16 @@
                                             <h5>Red and white flowers</h5>
                                         </td>
                                         <td class="price">
-                                            <span>$10</span>
+                                            <span class="cart-price">$10</span>
                                         </td>
                                         <td class="qty">
                                             <div class="qty-btn d-flex">
                                                 <p>Qty</p>
                                                 <div class="quantity">
-                                                    <span class="qty-minus" onclick="var effect = document.getElementById('qty3'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                    <input type="number" class="qty-text" id="qty3" step="1" min="1" max="300" name="quantity" value="1">
-                                                    <span class="qty-plus" onclick="var effect = document.getElementById('qty3'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                    <input type="number" class="qty-text" name="quantity" value="1">
                                                 </div>
                                             </div>
+                                            <div><button  class="btn btn-danger" type="button">Remove</button></div>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -186,13 +186,14 @@
                     <div class="col-12 col-lg-4">
                         <div class="cart-summary">
                             <h5>Cart Total</h5>
-                            <ul class="summary-table">
-                                <li><span>subtotal:</span> <span>$140.00</span></li>
-                                <li><span>delivery:</span> <span>Free</span></li>
-                                <li><span>total:</span> <span>$140.00</span></li>
-                            </ul>
+                            <br>
+                            <br>
+                                <strong class="cart-total-title">Total:</strong>
+                                <span class="cart-total-price">0</span>
                             <div class="cart-btn mt-100">
-                                <a href="cart.html" class="btn amado-btn w-100">Checkout</a>
+                                <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+                                <script>paypal.Buttons().render('body');</script>
+                                <a href="checkout.html" class="btn amado-btn w-100">Checkout</a>
                             </div>
                         </div>
                     </div>
@@ -292,6 +293,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <script src="cart.js" type="text/javascript"></script>
 
 </body>
 
